@@ -40,12 +40,12 @@ class ProjectsController extends Controller
             'title'                 => 'required',
             'description'           => 'required',
             'media'                 => 'required',
-            'date'                  => 'nullable',
+            'date'                  => 'required',
             'prints_available'      => 'required',
             'print_size'            => 'required',
             'print_price'           => 'required',
-            'original_size'         => 'required',
-            'original_price'        => 'required'
+            'original_size'         => 'nullable',
+            'original_price'        => 'nullable'
         ]);
 
         $project = new Project();
@@ -99,7 +99,34 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $validatedData = $request->validate([
+            'title'                 => 'required',
+            'description'           => 'required',
+            'media'                 => 'required',
+            'date'                  => 'required',
+            'prints_available'      => 'required',
+            'print_size'            => 'required',
+            'print_price'           => 'required',
+            'original_size'         => 'nullable',
+            'original_price'        => 'nullable'
+        ]);
+
+        $project = Project::find( $id );
+
+        $project->title             = $request->input( 'title' );
+        $project->description       = $request->input( 'description' );
+        $project->media             = $request->input( 'media' );
+        $project->creation_date     = $request->input( 'date' );
+        // $project->image             = 'example.jpg';
+        $project->prints_available  = $request->input( 'prints_available' );
+        $project->print_size        = $request->input( 'print_size' );
+        $project->print_price       = $request->input( 'print_price' );
+        $project->original_size     = $request->input( 'original_size' );
+        $project->original_price    = $request->input( 'original_price' );
+
+        $project->save();
+
+        return redirect( 'dashboard' )->with( 'success', $project->title . ' successfully updated.' );
     }
 
     /**
