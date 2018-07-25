@@ -16,6 +16,7 @@
         </header>
 
         @include( 'includes/nav' )
+        @include( 'includes/messages' )
 
         <main>
             @yield( 'content' )

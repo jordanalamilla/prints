@@ -36,7 +36,18 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title'                 => 'required',
+            'description'           => 'required',
+            'media'                 => 'required',
+            // 'image'                 => 'required',
+            'date'                  => 'nullable',
+            'prints_available'      => 'required',
+            'print_size'            => 'required',
+            'print_price'           => 'required',
+            'original_size'         => 'required',
+            'original_price'        => 'required'
+        ]);
     }
 
     /**
@@ -72,7 +83,7 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**

@@ -2,7 +2,9 @@
 
 @section( 'content' )
 
-{!! Form::open(['action' => 'ProjectsController@store']) !!}
+{!! Form::open( ['action' => [ 'ProjectsController@update', $project->id ] ] ) !!}
+
+    {!! Form::hidden( '_method', 'PUT' ) !!}
     
     <!--TITLE-->
     {!! Form::label('title', 'Title'); !!}
@@ -63,6 +65,8 @@
         {!! Form::text('original_price', $project->original_price, ['placeholder' => '800.00']); !!}
 
     </div>
+
+    {!! Form::submit( 'Update' ) !!}
 
 {!! Form::close() !!}
 

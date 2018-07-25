@@ -24,7 +24,7 @@
     
     <!--DATE-->
     {!! Form::label('date', 'Date'); !!}
-    {!! Form::text('date', '', ['placeholder' => 'Month Year']); !!}
+    {!! Form::text('date', '', ['placeholder' => 'September 2018']); !!}
 
     <br>
     
@@ -54,7 +54,7 @@
 
         <!--ORIGINAL SIZE-->
         {!! Form::label('original_size', 'Original Size'); !!}
-        {!! Form::text('original_size', '', ['placeholder' => 'Month Year']); !!}
+        {!! Form::text('original_size', '', ['placeholder' => '18 x 24 inch']); !!}
 
         <br>
 
@@ -63,6 +63,8 @@
         {!! Form::text('original_price', '', ['placeholder' => '800.00']); !!}
 
     </div>
+
+    {!! Form::submit( 'Create' ) !!}
 
 {!! Form::close() !!}
 
