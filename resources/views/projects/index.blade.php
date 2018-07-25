@@ -2,8 +2,6 @@
 
 @section( 'content' )
 
-    <a href="/projects/create">Add New Project</a>
-
     <div id="gallery">
 
         @foreach( $projects as $project )
