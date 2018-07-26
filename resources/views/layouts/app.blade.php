@@ -19,9 +19,17 @@
 
     <!-- BOOTSTRAP Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+
+    <!-- CUSTOM Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div class="container" id="app">
+
+        <img src="/img/rose.png"
+             alt="A rose graphic by Jordan Alamilla." />
+
+        <h1>The Artwork of Jordan Alamilla</h1>
 
         @include( 'includes/nav' )
         @include( 'includes/messages' )
