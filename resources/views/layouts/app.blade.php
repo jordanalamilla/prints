@@ -26,15 +26,19 @@
 <body>
     <div class="container" id="app">
 
-        <img src="/img/rose.png"
-             alt="A rose graphic by Jordan Alamilla." />
+        <header>
+            <div id="header-image-container">
+                <img src="/img/rose.png"
+                    alt="A rose graphic by Jordan Alamilla." />
+            </div>
 
-        <h1>The Artwork of Jordan Alamilla</h1>
+            <h1>The Artwork of <strong>Jordan Alamilla</strong></h1>
+        </header>
 
         @include( 'includes/nav' )
         @include( 'includes/messages' )
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>

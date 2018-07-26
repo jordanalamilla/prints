@@ -10473,14 +10473,73 @@ a.text-dark:focus {
 
 /* ========== CUSTOM CSS ========== */
 
+body {
+  font-family: "Inconsolata", monospace;
+  text-transform: uppercase;
+  background-color: #F3F1EE;
+  letter-spacing: 2px;
+}
+
+/* COMMON */
+#app {
+  margin-top: 50px;
+}
+
+#header-image-container,
+header h1,
+nav {
+  margin-bottom: 20px;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+}
+
+#header-image-container, header h1 {
+  width: 100%;
+  display: inline-block;
+}
+
+#header-image-container img {
+  height: 100%;
+}
+
 /* NAVIGATION */
 nav {
   width: 100%;
+  text-align: center;
+}
+
+nav ul {
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  margin: 10px auto;
 }
 
 nav ul li {
   list-style-type: none;
   display: inline;
+}
+
+nav ul li a {
+  color: #000;
+}
+
+hr {
+  display: block;
+       position: relative;
+       padding: 0;
+       margin: 0 auto;
+       height: 0;
+       width: 100%;
+       max-height: 0;
+       font-size: 1px;
+       line-height: 0;
+       clear: both;
+       border: none;
+       border-top: 1px solid #000;
 }
 
 /* GALLERY */
