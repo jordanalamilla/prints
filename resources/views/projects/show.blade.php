@@ -2,35 +2,37 @@
 
 @section( 'content' )
 
-    <ul id="project">
+    <div id="project">
 
         <!--TITLE-->
-        <li id="project-title">{{ $project->title }}</li>
+        <div id="project-title"><h2>{{ $project->title }}</h2></div>
 
         <!--DESCRIPTION-->
-        <li id="project-description">{{ $project->description }}</li>
+        <div id="project-description">{{ $project->description }}</div>
 
         <!--SIGNATURE-->
-        <li id="project-signature">
+        <div id="project-signature">
             <img src="/img/signature.png"
-                    alt="{{ $project->title }} by Jordan Alamilla" />
-        </li>
+                 alt="{{ $project->title }} by Jordan Alamilla" />
+        </div>
 
         <!--IMAGE-->
-        <li id="project-image">
-            <img src="/img/projects/thumb/{{ $project->image }}"
-                    alt="{{ $project->title }} by Jordan Alamilla" />
-        </li>
+        <div id="project-image">
+            <img class="shadow"
+                 src="/img/projects/full/{{ $project->image }}"
+                 alt="{{ $project->title }} by Jordan Alamilla" />
+        </div>
 
         <!--PRINT DETAILS-->
-        <li id="project-print-details">
+        <div id="project-print-details">
             {{ $project->print_size }} : ${{ money_format('%i', $project->print_price ) }}
-        </li>
+        </div>
 
         <!--ADD TO CART-->
-        <li id="project-add-to-cart">
+        <div id="project-add-to-cart">
             <button>Add To Cart</button>
-        </li>
-    </ul>
+        </div>
+
+    </div>
 
 @endsection
