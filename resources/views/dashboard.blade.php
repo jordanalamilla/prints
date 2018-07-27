@@ -2,25 +2,23 @@
 
 @section( 'content' )
 
-    <a href="/projects/create">Add New Project</a>
-
-    <table>
+    <table id="dashboard">
 
         <thead>
-            <th>Projects</th>    
+            <th><h2>Projects</h2></th>    
         </thead>
 
         @foreach( $projects as $project )
 
             <tr>
-                <td><a href="/projects/{{ $project->id }}">{{ $project->title }}</a></td>
-                <td>
+                <td class="dashboard-title"><a href="/projects/{{ $project->id }}">{{ $project->title }}</a></td>
+                <td class="dashboard-edit">
                     <a href="/projects/{{ $project->id }}/edit">Edit</a>
                 </td>
-                <td>
+                <td class="dashboard-delete">
                     {!! Form::open( [ 'action' => [ 'ProjectsController@destroy', $project->id ] ] ) !!}
                         {!! Form::hidden( '_method', 'DELETE') !!}
-                        {!! Form::submit( 'Delete' ) !!}
+                        {!! Form::submit( 'x' ) !!}
                     {!! Form::close() !!}
                 </td>
             </tr>
@@ -28,5 +26,8 @@
         @endforeach
 
     </table>
+
+    <a class="button"
+       href="/projects/create">Add New Project</a>
 
 @endsection

@@ -10492,8 +10492,28 @@ body {
 #header-image-container,
 header h1,
 nav,
-#project div {
+#project div,
+#dashboard {
   margin-bottom: 20px;
+}
+
+*:hover {
+  transition: 0.2s;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px;
+  background-color: rgb(208, 87, 87);
+  color: #FFF;
+  border-radius: 5px;
+  border: 1px solid #ad2f2f;
+}
+
+.button:hover {
+  text-decoration: none;
+  color: #FFF;
+  background-color: rgb(143, 59, 59);
 }
 
 /* HEADER */
@@ -10587,7 +10607,7 @@ hr {
 }
 
 .gallery-project-title:hover {
-  transition: 0.1s;
+  /* transition: 0.1s; */
   opacity: 1;
 }
 
@@ -10622,4 +10642,52 @@ hr {
 #project-image img {
   width: 100%;
   border: 30px solid #FFF;
+}
+
+/* DASHBOARD */
+#dashboard {
+  width: 100%;
+}
+
+#dashboard a {
+  font-weight: bold;
+  color: #000;
+}
+
+#dashboard tr {
+  width: calc(100% - 10px);
+  border-bottom: 1px solid #AAA;
+}
+
+#dashboard tr a {
+  line-height: 50px;
+}
+
+#dashboard thead tr {
+  border-bottom: none;
+}
+
+#dashboard tr:hover {
+  background-color: #ECE3E3;
+}
+
+#dashboard thead tr:hover {
+  background-color: transparent;
+}
+
+.dashboard-title {
+  width: calc(100% - 160px);
+}
+
+.dashboard-edit,
+.dashboard-delete {
+  text-align: right;
+  width: 30px;
+}
+
+.dashboard-delete input {
+  border: none;
+  font-size: 120%;
+  background: none;
+  cursor: pointer;
 }
