@@ -18,19 +18,23 @@
 
         <!--IMAGE-->
         <div id="project-image">
-            <img class="shadow"
+            <img class="print-shadow"
                  src="/img/projects/full/{{ $project->image }}"
                  alt="{{ $project->title }} by Jordan Alamilla" />
         </div>
 
         <!--PRINT DETAILS-->
-        <div id="project-print-details">
-            {{ $project->print_size }} : ${{ money_format('%i', $project->print_price ) }}
-        </div>
+        <div id="project-cart">
 
-        <!--ADD TO CART-->
-        <div id="project-add-to-cart">
-            <button>Add To Cart</button>
+            <div id="project-print-details">
+                <p>Signed Print</p>
+                <p>{{ $project->print_size }} : ${{ money_format('%i', $project->print_price ) }}</p>
+            </div>
+
+            <!--ADD TO CART-->
+            <div id="project-add-to-cart">
+                <button class="button">Add To Cart</button>
+            </div>
         </div>
 
     </div>

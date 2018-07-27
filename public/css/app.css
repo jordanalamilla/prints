@@ -10478,11 +10478,14 @@ body {
   text-transform: uppercase;
   background-color: #F3F1EE;
   letter-spacing: 2px;
+  min-height: 100vh;
+
+  box-shadow: 0 0 100px rgba(0,0,0,0.2) inset;
 }
 
 /* COMMON */
 #app {
-  margin-top: 50px;
+  padding-top: 50px;
 }
 
 .container {
@@ -10492,6 +10495,7 @@ body {
 #header-image-container,
 header h1,
 nav,
+#app,
 #project div,
 #dashboard {
   margin-bottom: 20px;
@@ -10508,6 +10512,7 @@ nav,
   color: #FFF;
   border-radius: 5px;
   border: 1px solid #ad2f2f;
+  text-transform: uppercase;
 }
 
 .button:hover {
@@ -10576,7 +10581,9 @@ hr {
 }
 
 /* GALLERY */
-#gallery .gallery-project img {
+#gallery {
+  overflow: auto;
+  position: relative;
   width: 100%;
 }
 
@@ -10613,10 +10620,11 @@ hr {
 
 .gallery-project img {
   z-index: 0;
+  width: 100%;
 }
 
 /* PROJECT */
-.shadow {
+.print-shadow {
   -webkit-box-shadow: 0px 13px 20px -2px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 13px 20px -2px rgba(0,0,0,0.2);
   box-shadow: 0px 13px 20px -2px rgba(0,0,0,0.2);
@@ -10635,13 +10643,37 @@ hr {
   width: 60px;
 }
 
-#project-image {
+#project-image,
+#project-cart {
   padding: 0 10%;
+}
+
+#project-cart {
+  overflow: auto;
 }
 
 #project-image img {
   width: 100%;
-  border: 30px solid #FFF;
+  border: 20px solid #FFF;
+}
+
+#project-print-details {
+  text-align: left;
+  line-height: normal;
+  float: left;
+}
+
+#project-print-details p:first-child {
+  font-weight: bold;
+  /* display: inline-block; */
+  /* width: auto; */
+  padding-bottom: 3px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #000;
+}
+
+#project-add-to-cart {
+  float: right;
 }
 
 /* DASHBOARD */
@@ -10690,4 +10722,13 @@ hr {
   font-size: 120%;
   background: none;
   cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  clear: both;
+  margin-top: 50px;
+  width: 100vw;
+  height: 100px;
+  background-color: rgb(35, 35, 35);
 }
