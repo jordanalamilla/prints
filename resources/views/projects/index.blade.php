@@ -7,14 +7,16 @@
         @foreach( $projects as $project )
 
             <a href="/projects/{{ $project->id }}">
-                
-                <!--TITLE-->
-                {{-- <div class="project-title">{{ $project->title }}</div> --}}
 
-                <!--IMAGE-->
+                <!--PROJECT-->
                 <div class="gallery-project">
+
+                    <!--TITLE-->
+                    <div class="gallery-project-title">{{ $project->title }}</div>
+
+                    <!--IMAGE-->
                     <img src="img/projects/thumb/{{ $project->image }}"
-                        alt="{{ $project->title }} by Jordan Alamilla" />
+                         alt="{{ $project->title }} by Jordan Alamilla" />
                 </div>
 
             </a>

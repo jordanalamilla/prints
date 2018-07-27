@@ -7,6 +7,7 @@
         <li><a href="/">Gallery</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
+        <li>//</li>
 
         <!-- AUTH LINKS -->
         @guest
