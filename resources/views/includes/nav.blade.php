@@ -24,7 +24,10 @@
             @endif
 
             {{-- CART --}}
-            <li><a href="/cart">Cart</a></li>
+            <li>
+                {{-- <i class="fas fa-shopping-cart"></i>  --}}
+                <a href="/cart">Cart</a>
+            </li>
 
             {{-- LOGOUT --}}
             <li>
