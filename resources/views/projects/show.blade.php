@@ -23,7 +23,7 @@
                  alt="{{ $project->title }} by Jordan Alamilla" />
         </div>
 
-        <!--PRINT DETAILS-->
+        {{-- <!--PRINT DETAILS-->
         <div id="project-cart">
 
             <div id="project-print-details">
@@ -33,9 +33,13 @@
 
             <!--ADD TO CART-->
             <div id="project-add-to-cart">
-                <button class="button">Add To Cart</button>
+
+                {!! Form::open( [ 'action' => [ 'CartController@add', $project ] ] ) !!}
+                    {!! Form::submit( 'Add To Cart' ) !!}
+                {!! Form::close() !!}
+                
             </div>
-        </div>
+        </div> --}}
 
     </div>
 

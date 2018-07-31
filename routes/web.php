@@ -11,7 +11,14 @@
 |
 */
 
+# SITE INDEX
 Route::get( '/', 'ProjectsController@index' );
+
+# DASHBOARD INDEX
 Route::get( '/dashboard', 'DashboardController@index' );
+
+# PROJECTS ROUTE RESOURCE
 Route::resource( 'projects', 'ProjectsController' );
+
+# AUTHENTICATION ROUTE RESOURCE
 Auth::routes();
