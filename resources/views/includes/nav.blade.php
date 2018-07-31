@@ -7,16 +7,17 @@
         <li><a href="/">Gallery</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
-        <li>//</li>
 
         <!-- AUTH LINKS -->
         @guest
 
-            <li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
-            {{-- <li><a href="{{ route('register') }}">{{ __('Register') }}</a></li> --}}
+            {{-- <li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
+            <li><a href="{{ route('register') }}">{{ __('Register') }}</a></li> --}}
 
-        {{-- LOGGED IN LINKS --}}
+        <!--LOGGED IN LINKS-->
         @else
+
+            <li>//</li>
         
             {{-- DASHBOARD --}}
             @if( Auth::user()->type == 'admin' )

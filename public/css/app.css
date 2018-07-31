@@ -10740,11 +10740,26 @@ form .card-header {
 
 /* FOOTER */
 footer {
+  text-align: center;
   clear: both;
   margin-top: 50px;
   width: 100vw;
-  height: 100px;
-  background-color: rgb(35, 35, 35);
+  font-size: 80%;
+  background-color: #DCDCDC;
+}
+
+footer, footer a {
+  color: #A2A2A2;
+}
+
+footer a:hover {
+  color: rgb(85, 85, 85);
+  text-decoration: none;
+}
+
+footer p {
+  padding: 20px;
+  margin-bottom: 0;
 }
 
 /* MEDIA QUERIES */

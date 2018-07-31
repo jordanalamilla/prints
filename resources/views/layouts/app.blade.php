@@ -47,6 +47,17 @@
         </main>
     </div>
 
-    <footer></footer>
+    <footer>
+
+        <div class="container">
+            <p>&copy; Jordan Alamilla 2018
+                <!-- AUTH LINKS -->
+                @guest
+                     // <a href="{{ route('login') }}">{{ __('Admin Login') }}</a>
+                @endguest
+            </p>
+        </div>
+
+    </footer>
 </body>
 </html>
