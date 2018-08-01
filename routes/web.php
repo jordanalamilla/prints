@@ -22,3 +22,12 @@ Route::resource( 'projects', 'ProjectsController' );
 
 # AUTHENTICATION ROUTE RESOURCE
 Auth::routes();
+
+# CONTACT FORM
+Route::get( '/contact', 'PagesController@contact' );
+
+# ABOUT PAGE
+Route::get( '/about', 'PagesController@about' );
+
+# MAIL ROUTE
+Route::post( '/contact/send', 'MailController@send' );
