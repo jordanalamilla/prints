@@ -13,7 +13,10 @@
     <!--DESCRIPTION-->
     <div class="form-element" id="form-create-description">
         {!! Form::label('description', 'Description'); !!}
-        {!! Form::textarea('description', '', ['placeholder' => 'Description']); !!}
+        {!! Form::textarea('description', '', [
+            'id' => 'article-ckeditor',
+            'placeholder' => 'Description'
+        ]); !!}
     </div>
     
     
@@ -72,5 +75,9 @@
     {!! Form::submit( 'Create' ) !!}
 
 {!! Form::close() !!}
+
+<script>
+    CKEDITOR.replace( 'article-ckeditor' );
+</script>
 
 @endsection

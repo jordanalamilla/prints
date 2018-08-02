@@ -15,7 +15,10 @@
     <!--DESCRIPTION-->
     <div class="form-element" id="form-create-description">
         {!! Form::label('description', 'Description'); !!}
-        {!! Form::textarea('description', $project->description, ['placeholder' => 'Description']); !!}
+        {!! Form::textarea('description', $project->description, [
+            'id'            => 'article-ckeditor',
+            'placeholder'   => 'Description'
+        ]); !!}
     </div>
     
     <!--MEDIA-->
@@ -50,8 +53,8 @@
 
     <!--ORIGINAL AVAILABLE-->
     <div class="form-element" id="form-create-original-available">
-        {!! Form::label('original_avaiable', 'Original Available?'); !!}
-        {!! Form::checkbox('original_avaiable', '', $project->original_available); !!}
+        {!! Form::label('original_available', 'Original Available?'); !!}
+        {!! Form::text('original_available', $project->original_available, ['placeholder' => 'yes/no']); !!}
     </div>
 
     <div id="original-details">
@@ -73,5 +76,9 @@
     {!! Form::submit( 'Update' ) !!}
 
 {!! Form::close() !!}
+
+<script>
+    CKEDITOR.replace( 'article-ckeditor' );
+</script>
 
 @endsection

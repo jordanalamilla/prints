@@ -10566,7 +10566,8 @@ nav ul li a {
 nav ul li a:hover {
   color: #F00;
   font-weight: bold;
-  /* border-bottom: 1px solid #F00; */
+  text-decoration: none;
+  transition: 0s;
 }
 
 hr {
@@ -10658,7 +10659,7 @@ form .card-header {
 
 #project-image,
 #project-cart {
-  padding: 0 10%;
+  /* padding: 0 10%; */
 }
 
 #project-cart {
@@ -10736,6 +10737,14 @@ form .card-header {
   font-size: 120%;
   background: none;
   cursor: pointer;
+}
+
+/* ABOUT */
+#about p {
+  text-transform: none;
+  letter-spacing: normal;
+  /* line-height: 1.8; */
+  margin-bottom: 25px;
 }
 
 /* FOOTER */

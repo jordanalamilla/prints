@@ -11,7 +11,10 @@
     <title>{{ config('app.name', 'Art By Jordan') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    {{-- CKEDITOR --}}
+    <script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">

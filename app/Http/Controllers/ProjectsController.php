@@ -72,9 +72,14 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show( Request $request, $id )
     {
         $project = Project::find( $id );
+
+        if( $project->original_available == 'yes' ) {
+            $request->session()->flash( 'success', 'This original drawing is available for purchase. Check <a href="/about">"ABOUT"</a> for more info.' );
+        }
+
         return view( 'projects/show' )->with( 'project', $project );
     }
 
@@ -107,22 +112,24 @@ class ProjectsController extends Controller
             'prints_available'      => 'required',
             'print_size'            => 'required',
             'print_price'           => 'required',
+            'original_available'    => 'nullable',
             'original_size'         => 'nullable',
             'original_price'        => 'nullable'
         ]);
 
         $project = Project::find( $id );
 
-        $project->title             = $request->input( 'title' );
-        $project->description       = $request->input( 'description' );
-        $project->media             = $request->input( 'media' );
-        $project->creation_date     = $request->input( 'date' );
+        $project->title                 = $request->input( 'title' );
+        $project->description           = $request->input( 'description' );
+        $project->media                 = $request->input( 'media' );
+        $project->creation_date         = $request->input( 'date' );
         // $project->image             = 'example.jpg';
-        $project->prints_available  = $request->input( 'prints_available' );
-        $project->print_size        = $request->input( 'print_size' );
-        $project->print_price       = $request->input( 'print_price' );
-        $project->original_size     = $request->input( 'original_size' );
-        $project->original_price    = $request->input( 'original_price' );
+        $project->prints_available      = $request->input( 'prints_available' );
+        $project->print_size            = $request->input( 'print_size' );
+        $project->print_price           = $request->input( 'print_price' );
+        $project->original_available    = $request->input( 'original_available' );
+        $project->original_size         = $request->input( 'original_size' );
+        $project->original_price        = $request->input( 'original_price' );
 
         $project->save();
 
