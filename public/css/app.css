@@ -10490,6 +10490,7 @@ body {
 
 .container {
   max-width: 800px;
+  min-height: 89vh;
 }
 
 #header-image-container,
@@ -10657,11 +10658,6 @@ form .card-header {
   width: 60px;
 }
 
-#project-image,
-#project-cart {
-  /* padding: 0 10%; */
-}
-
 #project-cart {
   overflow: auto;
 }
@@ -10755,6 +10751,10 @@ footer {
   width: 100vw;
   font-size: 80%;
   background-color: #DCDCDC;
+}
+
+footer .container {
+  min-height: 0;
 }
 
 footer, footer a {
