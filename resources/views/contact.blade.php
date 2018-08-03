@@ -15,11 +15,12 @@
         ]); !!}
     </div>
     
-    <!--DESCRIPTION-->
+    <!--MESSAGE-->
     <div class="form-group" id="form-email-content">
         {!! Form::label('content', 'Message'); !!}
         {!! Form::textarea('content', '', [
             'class' => 'form-control',
+            'id' => 'article-ckeditor',
             'placeholder' => 'Type your message here...'
         ]); !!}
     </div>
@@ -29,5 +30,9 @@
     ]) !!}
 
 {!! Form::close() !!}
+
+<script>
+    CKEDITOR.replace( 'article-ckeditor' );
+</script>
 
 @endsection

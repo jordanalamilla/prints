@@ -149,7 +149,6 @@ class ProjectsController extends Controller
         $project->description           = $request->input( 'description' );
         $project->media                 = $request->input( 'media' );
         $project->creation_date         = $request->input( 'date' );
-        // $project->image             = 'example.jpg';
         $project->prints_available      = $request->input( 'prints_available' );
         $project->print_size            = $request->input( 'print_size' );
         $project->print_price           = $request->input( 'print_price' );
