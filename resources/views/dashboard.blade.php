@@ -18,7 +18,7 @@
                 <td class="dashboard-delete">
                     {!! Form::open( [ 'action' => [ 'ProjectsController@destroy', $project->id ] ] ) !!}
                         {!! Form::hidden( '_method', 'DELETE') !!}
-                        {!! Form::submit( 'x' ) !!}
+                        {!! Form::submit( '×' ) !!}
                     {!! Form::close() !!}
                 </td>
             </tr>

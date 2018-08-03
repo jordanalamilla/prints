@@ -17,7 +17,7 @@
     
     <!--DESCRIPTION-->
     <div class="form-group" id="form-email-content">
-        {!! Form::label('content', 'Content'); !!}
+        {!! Form::label('content', 'Message'); !!}
         {!! Form::textarea('content', '', [
             'class' => 'form-control',
             'placeholder' => 'Type your message here...'

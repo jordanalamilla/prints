@@ -33,6 +33,7 @@ class Mailer extends Mailable
     public function build()
     {
         return $this->from( $this->sender )
+                    ->subject( 'New Mail: art.jordanalamilla.com' )
                     ->view('mail/mail');
     }
 }

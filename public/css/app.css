@@ -10728,9 +10728,9 @@ form .card-header {
 }
 
 .dashboard-delete input {
-  color: #F00;
+  /* color: #F00; */
   border: none;
-  font-size: 120%;
+  font-size: 170%;
   background: none;
   cursor: pointer;
 }

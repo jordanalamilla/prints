@@ -10,11 +10,6 @@
 </head>
 <body>
 
-    <h1>
-        Mail From {{ $sender }}: 
-        <a href="http://art.jordanalamilla.com">art.jordanalamilla.com</a>
-    </h1>
-
     <p>{{ $content }}</p>
 
 </body>
