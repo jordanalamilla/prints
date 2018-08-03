@@ -4,7 +4,7 @@
 
 <h2>Create Project</h2>
 
-{!! Form::open(['action' => 'ProjectsController@store']) !!}
+{!! Form::open(['action' => 'ProjectsController@store', 'files' => true ]) !!}
     
     <!--TITLE-->
     <div class="form-element" id="form-create-title">
@@ -74,7 +74,7 @@
     <!--ORIGINAL AVAILABLE-->
     <div class="form-group" id="form-create-original-available">
         {!! Form::label('original_avaiable', 'Original Available?'); !!}
-        {!! Form::text('original_avaiable', '', [
+        {!! Form::text('original_available', '', [
             'class' => 'form-control',
             'placeholder' => 'yes/no'
         ]); !!}
@@ -100,6 +100,22 @@
             ]); !!}
         </div>
         
+    </div>
+
+    <!--THUMB IMAGE-->
+    <div class="form-group" id="form-create-thumb-image">
+        {!! Form::label('thumb_image', 'Thumbnail Image'); !!}
+        {!! Form::file('thumb_image', [
+            'class' => 'form-control'
+        ]); !!}
+    </div>
+
+    <!--FULL IMAGE-->
+    <div class="form-group" id="form-create-full-image">
+        {!! Form::label('full_image', 'Full Sized Image'); !!}
+        {!! Form::file('full_image', [
+            'class' => 'form-control'
+        ]); !!}
     </div>
 
     {!! Form::submit( 'Create', [

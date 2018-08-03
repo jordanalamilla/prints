@@ -7,7 +7,7 @@
         <!--IMAGE-->
         <div id="project-image">
             <img class="print-shadow"
-                 src="/img/projects/full/{{ $project->image }}"
+                 src="/storage/img/projects/full/{{ $project->image }}"
                  alt="{{ $project->title }} by Jordan Alamilla" />
         </div>
 
