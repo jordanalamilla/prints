@@ -2,32 +2,6 @@
 
 @section( 'content' )
 
-    {{-- <div id="project">
-
-        <!--IMAGE-->
-        <div id="project-image">
-            <img class="print-shadow"
-                 src="/storage/img/projects/full/{{ $project->image }}"
-                 alt="{{ $project->title }} by Jordan Alamilla" />
-        </div>
-
-        <!--TITLE-->
-        <div id="project-title"><h2>{{ $project->title }}</h2></div>
-
-        <!--DESCRIPTION-->
-        <div id="project-description">{!! $project->description !!}</div>
-
-        <!--SIGNATURE-->
-        <div id="project-signature">
-            <img src="/img/signature-invert.png"
-                 alt="{{ $project->title }} by Jordan Alamilla" />
-        </div>
-
-    </div> --}}
-
-
-
-
     <!--PRINT-->
     <div class="light">
         
