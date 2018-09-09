@@ -1,0 +1,167 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+/*Eric Meyers CSS Reset*/
+
+/* ========== STRUCTURE ==========*/
+
+.container {
+    width: calc(80% - 40px);
+    margin: 0 auto;
+    clear: both;
+}
+
+/* ========== FLOATS ==========*/
+
+.left, .right, .center {
+    display: inline-block;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/* ========== WIDTHS ==========*/
+
+.space {
+    margin: 10px;
+    padding: 10px;
+}
+
+.full {
+    width: calc(100% - 40px);
+}
+
+.half {
+    width: calc(50% - 40px);
+}
+
+.third {
+    width: calc(33.3333% - 40px);
+}
+
+.two-third {
+    width: calc(66.6666% - 40px);
+}
+
+.quarter {
+    width: calc(25% - 40px);
+}
+
+/* ========== THEMES ========== */
+
+/*
+
+BLACK : #121212
+WHITE : #F0F0F0
+
+*/
+
+.light {
+    color: #121212;
+    background-color: #F0F0F0;
+}
+
+.light a {
+    color: #121212;
+    text-decoration: none;
+    border-bottom: 1px solid #121212;
+}
+
+.dark {
+    color: #F0F0F0;
+    background-color: #121212;
+}
+
+.dark a {
+    color: #F0F0F0;
+    text-decoration: none;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.grey-text{
+    color: #808080;
+}
+
+/* ========== REUSABLE CLASSES ==========*/
+
+.untouchable {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.button {
+    color: #F8F6F3 !important;
+    background-color: #A96060;
+    border-radius: 2px;
+    padding: 10px;
+    text-transform: lowercase;
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+.shadow {
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+}
+
+/* ========== MOBILE ==========*/
+
+@media only screen and (max-width : 1200px) {
+
+    .half {
+        width: calc(100% - 40px);
+    }
+
+    .one-third {
+        width: calc(50% - 40px);
+    }
+
+    .two-third {
+        width: calc(100% - 40px);
+    }
+
+    .third {
+        width: calc(50% - 40px);
+    }
+
+    .quarter {
+        width: calc(50% - 40px);
+    }
+}
+
+@media only screen and (max-width : 1000px) {
+    
+    .container {
+        width: calc(100% - 20px);
+    }
+}
+
+@media only screen and (max-width : 600px) {
+
+    .third {
+        width: calc(100% - 40px);
+    }
+
+    .quarter {
+        width: calc(100% - 40px);
+    }
+}
+
+@media only screen and (max-width : 480px) {
+
+    .third {
+        width: calc(100% - 40px);
+    }
+
+    .quarter {
+        width: calc(100% - 40px);
+    }
+}

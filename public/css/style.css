@@ -1,0 +1,111 @@
+/* ========== GLOBAL ========== */
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.padding {
+    padding: 20px 0;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.page-high {
+    min-height: calc(100vh - 100px);
+}
+
+/* ========== NAV ========== */
+
+nav {
+    height: 100px;
+}
+
+#nav-logo {
+    height: 60px;
+}
+
+#nav-logo img {
+    height: 100%;
+}
+
+#nav-links a {
+    font-size: 18px;
+    line-height: 60px;
+    margin: 0 10px;
+    border-bottom: none;
+}
+
+/* ========== HEADER ========== */
+
+header h1 {
+    font-weight: 700;
+    font-size: 72px;
+}
+
+header p {
+    font-size: 20px;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+header img {
+    width: 100%;
+}
+
+/* ========== GALLERY ========== */
+
+main {
+    overflow: auto;
+}
+
+.gallery-print img {
+    width: calc(100% - 30px);
+    border: 15px solid #FFF;
+}
+
+/* ========== PRINT ========== */
+
+#print-image img {
+    width: calc(100% - 10vh);
+    border: 5vh solid #FFF;
+}
+
+#print-title,
+#print-description,
+#print-info,
+#print-artist,
+#print-creds {
+    font-size: 14px;
+}
+
+#print-description,
+#print-info {
+    margin: 30px 0;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+#print-title,
+#print-info {
+    font-weight: bold;
+}
+
+#print-artist,
+#print-creds {
+    margin-top: 10px;
+}
+
+#print-signature {
+    width: 60px;
+}
+
+/* ========== MOBILE ========== */
+
+@media only screen and (max-width : 600px) {
+    
+    header h1 {
+        font-size: 40px;
+    }
+}

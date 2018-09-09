@@ -1,54 +1,45 @@
-<nav>
+<!--NAV-->
+<div class="light">
+    
+    <nav>
 
-    <!-- MAIN LINKS -->
-    <ul>
-        <li><a href="/">Gallery</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="http://instagram.com/jordanalamilla" target="_blank">Instagram</a></li>
+        <div class="container">
 
-        <!-- AUTH LINKS -->
-        @guest
+            <div class="left space" id="nav-logo">
 
-            {{-- <li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
-            <li><a href="{{ route('register') }}">{{ __('Register') }}</a></li> --}}
-
-        <!--LOGGED IN LINKS-->
-        @else
-
-            <li>//</li>
-        
-            {{-- DASHBOARD --}}
-            @if( Auth::user()->type == 'admin' )
-                <li><a href="/dashboard">Dashboard</a></li>
-            @endif
-
-            {{-- CART --}}
-            {{-- <li>
-                <i class="fas fa-shopping-cart"></i> 
-                <a href="/cart">Cart</a>
-            </li> --}}
-
-            {{-- LOGOUT --}}
-            <li>
-                <a href="{{ route('logout') }}"
-
-                    onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-
-                    {{ __('Logout') }}
+                <a href="{{ url('/') }}">
+                    <img src="/img/rose_black.png"
+                        alt="Black rose logo"
+                        title="{{ config('app.name', 'Art by Jordan') }}">
                 </a>
-            </li>
+            </div>
 
-            {{-- CSRF ( HIDDEN ) --}}
-            <form id="logout-form"
-                action="{{ route('logout') }}"
-                method="POST"
-                style="display: none;">
-                @csrf
-            </form>
+            <div class="right space lowercase" id="nav-links">
 
-        @endguest
-    </ul>
+                <a href="about.html">About</a>
+                <a href="index.html#prints">Prints</a>
+                <a href="index.html#contact">Contact</a>
 
-</nav>
+                @guest
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                @else
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+
+                @endguest
+
+            </div>
+
+        </div>
+
+    </nav>
+    
+</div>

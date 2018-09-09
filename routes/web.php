@@ -31,3 +31,6 @@ Route::get( '/about', 'PagesController@about' );
 
 # MAIL ROUTE
 Route::post( '/contact/send', 'MailController@send' );
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
