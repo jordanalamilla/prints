@@ -19,7 +19,7 @@
 
         <!--SIGNATURE-->
         <div id="project-signature">
-            <img src="/img/signature.png"
+            <img src="/img/signature-invert.png"
                  alt="{{ $project->title }} by Jordan Alamilla" />
         </div>
 

@@ -102,9 +102,9 @@ class ProjectsController extends Controller
     {
         $project = Project::find( $id );
 
-        if( $project->original_available == 'yes' ) {
-            $request->session()->flash( 'success', 'This original drawing is available for purchase. Check <a href="/about">ABOUT</a> for more info.' );
-        }
+        // if( $project->original_available == 'yes' ) {
+        //     $request->session()->flash( 'success', 'This original drawing is available for purchase. Check <a href="/about">ABOUT</a> for more info.' );
+        // }
 
         return view( 'projects/show' )->with( 'project', $project );
     }

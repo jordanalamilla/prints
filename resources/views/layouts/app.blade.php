@@ -31,11 +31,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="container" id="app">
+    <div id="app">
 
         <header>
             <div id="header-image-container">
-                <img src="/img/rose.png"
+                <img src="/img/rose-invert.jpg"
                     alt="A rose graphic by Jordan Alamilla." />
             </div>
 

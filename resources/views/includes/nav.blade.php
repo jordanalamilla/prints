@@ -1,7 +1,5 @@
 <nav>
 
-    <hr>
-
     <!-- MAIN LINKS -->
     <ul>
         <li><a href="/">Gallery</a></li>
@@ -52,7 +50,5 @@
 
         @endguest
     </ul>
-
-    <hr>
 
 </nav>

@@ -2,10 +2,10 @@
 
 @section( 'content' )
 
-<h1>Contact</h1>
-
-{!! Form::open(['action' => 'MailController@send']) !!}
+{!! Form::open(['action' => 'MailController@send', 'id' => 'contact-form']) !!}
     
+    <h1>Contact</h1>
+
     <!--TITLE-->
     <div class="form-group" id="form-email-sender">
         {!! Form::label('sender', 'Your Email Address'); !!}
