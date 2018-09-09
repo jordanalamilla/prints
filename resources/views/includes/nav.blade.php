@@ -5,6 +5,7 @@
 
         <div class="container">
 
+            <!--ROSE LOGO-->
             <div class="left space" id="nav-logo">
 
                 <a href="{{ url('/') }}">
@@ -14,15 +15,20 @@
                 </a>
             </div>
 
+            <!--NAV LINKS-->
             <div class="right space lowercase" id="nav-links">
 
-                <a href="about.html">About</a>
-                <a href="index.html#prints">Prints</a>
-                <a href="index.html#contact">Contact</a>
+                <!--PERSISTENT LINKS-->
+                <a href="/about">About</a>
+                <a href="/#prints">Prints</a>
+                <a href="/contact">Contact</a>
 
+                <!--LOGGED OUT LINKS-->
                 @guest
                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+
+                <!--LOGGED IN LINKS-->
                 @else
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
@@ -37,9 +43,6 @@
                 @endguest
 
             </div>
-
         </div>
-
     </nav>
-    
 </div>

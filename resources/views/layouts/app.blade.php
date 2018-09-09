@@ -40,10 +40,8 @@
     <div id="app">
         
         @include( 'includes/nav' )
-
-        <main>
-            @yield('content')
-        </main>
+        @yield('content')
+        
     </div>
 </body>
 </html>
