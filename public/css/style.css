@@ -26,6 +26,10 @@ nav {
     height: 60px;
 }
 
+#nav-logo a {
+    border-bottom: none;
+}
+
 #nav-logo img {
     height: 100%;
 }
