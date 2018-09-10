@@ -2,6 +2,7 @@
 
 body {
     font-family: Helvetica, Arial, sans-serif;
+    background-color: #F0F0F0;
 }
 
 .padding {
@@ -103,6 +104,20 @@ main {
 
 #print-signature {
     width: 60px;
+}
+
+/* ========== FORMS ========== */
+
+.is-invalid, .invalid-feedback {
+    color: #F00;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #CCC;
 }
 
 /* ========== MOBILE ========== */

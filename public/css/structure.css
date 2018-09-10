@@ -96,14 +96,15 @@ WHITE : #F0F0F0
     -ms-user-select: none;
 }
 
-.button {
+button, .button {
     color: #F8F6F3 !important;
     background-color: #A96060;
-    border-radius: 2px;
+    border-radius: 5px;
     padding: 10px;
     text-transform: lowercase;
     text-decoration: none !important;
     border-bottom: none !important;
+    font-size: 16px;
 }
 
 .shadow {

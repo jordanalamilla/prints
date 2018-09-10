@@ -28,22 +28,29 @@
 
             <div class="container">
 
-                @foreach( $projects as $project )
+                @if( !count( $projects ) )
+                    <p>No projects available.</p>
 
-                    <!--PRINT-->
-                    <a href="/projects/{{ $project->id }}">
+                @else
 
-                        <div class="third left space gallery-print">
+                    @foreach( $projects as $project )
 
-                            <img class="shadow untouchable"
-                                    src="storage/img/projects/thumb/{{ $project->image }}"
-                                    alt="{{ $project->title }}"
-                                    title="{{ $project->title }}">
-                        </div>
+                        <!--PRINT-->
+                        <a href="/projects/{{ $project->id }}">
 
-                    </a>
+                            <div class="third left space gallery-print">
 
-                @endforeach
+                                <img class="shadow untouchable"
+                                        src="storage/img/projects/thumb/{{ $project->image }}"
+                                        alt="{{ $project->title }}"
+                                        title="{{ $project->title }}">
+                            </div>
+
+                        </a>
+
+                    @endforeach
+
+                @endif
 
             </div>
 
