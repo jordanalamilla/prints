@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProjectsTable extends Migration
+class CreatePrintsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
-
+        Schema::create('prints', function (Blueprint $table) {
             $table->increments('id');
-            $table->string( 'title' );
-            $table->mediumText( 'description' );
-            $table->mediumText( 'credits' );
-            $table->string( 'type' );
-            $table->string( 'image' );
-            $table->string( 'creation_date' );
+
+            # FOREIGN KEY TO PROJECT
+            $table->unsignedInteger('project_id');
+            $table->foreign('project_id')->references('id')->on('projects');
+
+            $table->integer( 'available' );
+            $table->string( 'size' );
+            $table->float( 'price', 3, 2 );
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('prints');
     }
 }
