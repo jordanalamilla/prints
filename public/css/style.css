@@ -120,6 +120,11 @@ input[type=password] {
     border-bottom: 1px solid #CCC;
 }
 
+form button {
+    display: block;
+    clear: both;
+}
+
 /* ========== MOBILE ========== */
 
 @media only screen and (max-width : 600px) {

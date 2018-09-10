@@ -13,7 +13,7 @@
             <!-- NAME -->
             <div class="form-group padding">
 
-                <label class="space" for="name">{{ __('Name') }}</label>
+                <label class="space lowercase" for="name">{{ __('Name') }}</label>
 
                 <div>
                     <input id="name"
@@ -38,7 +38,7 @@
             <!-- EMAIL -->
             <div class="form-group padding">
 
-                <label class="space" for="email">{{ __('E-Mail Address') }}</label>
+                <label class="space lowercase" for="email">{{ __('E-Mail Address') }}</label>
 
                 <div>
                     <input id="email"
@@ -62,7 +62,7 @@
             <!-- PASSWORD -->
             <div class="form-group padding">
 
-                <label class="space" for="password">{{ __('Password') }}</label>
+                <label class="space lowercase" for="password">{{ __('Password') }}</label>
 
                 <div>
 
@@ -84,7 +84,7 @@
 
             <!-- CONFIRM PASSWORD -->
             <div class="form-group padding">
-                <label class="space" for="password-confirm">{{ __('Confirm Password') }}</label>
+                <label class="space lowercase" for="password-confirm">{{ __('Confirm Password') }}</label>
 
                 <div>
 
@@ -93,6 +93,78 @@
                         class="full space form-control"
                         name="password_confirmation"
                         required>
+
+                </div>
+
+            </div>
+
+            <!-- ADDRESS -->
+            <div class="form-group padding">
+
+                <label class="space lowercase" for="address">{{ __('Address') }}</label>
+
+                <div>
+                    <input id="address"
+                        type="text"
+                        class="full space form-control{{ $errors->has('address') ? ' is-invalid' : '' }}"
+                        name="address"
+                        placeholder="123 Road Street"
+                        value="{{ old('address') }}"
+                        required>
+
+                    @if ($errors->has('address'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('address') }}</strong>
+                        </span>
+                    @endif
+
+                </div>
+
+            </div>
+
+            <!-- CITY -->
+            <div class="form-group padding">
+
+                <label class="space lowercase" for="city">{{ __('city') }}</label>
+
+                <div>
+                    <input id="city"
+                        type="text"
+                        class="full space form-control{{ $errors->has('city') ? ' is-invalid' : '' }}"
+                        name="city"
+                        placeholder="Toronto"
+                        value="{{ old('city') }}"
+                        required>
+
+                    @if ($errors->has('city'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('city') }}</strong>
+                        </span>
+                    @endif
+
+                </div>
+
+            </div>
+
+            <!-- POSTAL CODE -->
+            <div class="form-group padding">
+
+                <label class="space lowercase" for="postal_code">{{ __('Postal Code') }}</label>
+
+                <div>
+                    <input id="postal_code"
+                        type="text"
+                        class="full space form-control{{ $errors->has('postal_code') ? ' is-invalid' : '' }}"
+                        name="postal_code"
+                        placeholder="A1B 2C3"
+                        value="{{ old('postal_code') }}"
+                        required>
+
+                    @if ($errors->has('postal_code'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('postal_code') }}</strong>
+                        </span>
+                    @endif
 
                 </div>
 
