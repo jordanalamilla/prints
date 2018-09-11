@@ -11,26 +11,23 @@
 |
 */
 
-# SITE INDEX
-Route::get( '/', 'ProjectsController@index' );
-
-# DASHBOARD INDEX
-Route::get( '/dashboard', 'DashboardController@index' );
-
-# PROJECTS ROUTE RESOURCE
-Route::resource( 'projects', 'ProjectsController' );
-
 # AUTHENTICATION ROUTE RESOURCE
 Auth::routes();
 
-# CONTACT FORM
-Route::get( '/contact', 'PagesController@contact' );
+# SITE INDEX
+Route::get( '/', 'ProjectsController@index' );
 
 # ABOUT PAGE
 Route::get( '/about', 'PagesController@about' );
 
+# PROJECTS ROUTE RESOURCE
+Route::resource( 'projects', 'ProjectsController' );
+
+# CONTACT FORM
+Route::get( '/contact', 'PagesController@contact' );
+
+# DASHBOARD INDEX
+Route::get( '/dash', 'DashboardController@index' );
+
 # MAIL ROUTE
 Route::post( '/contact/send', 'MailController@send' );
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

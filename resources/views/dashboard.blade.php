@@ -2,32 +2,69 @@
 
 @section( 'content' )
 
-    <table id="dashboard">
+<!--INTRO-->
+<div class="light">
+        
+    <main class="padding">
 
-        <thead>
-            <th><h2>Projects</h2></th>    
-        </thead>
+        <div class="container">
 
-        @foreach( $projects as $project )
+            <!--HEADING-->
+            <div class="space">
+                <h1>Projects</h1>
+            </div>
 
-            <tr>
-                <td class="dashboard-title"><a href="/projects/{{ $project->id }}">{{ $project->title }}</a></td>
-                <td class="dashboard-edit">
-                    <a href="/projects/{{ $project->id }}/edit">Edit</a>
-                </td>
-                <td class="dashboard-delete">
-                    {!! Form::open( [ 'action' => [ 'ProjectsController@destroy', $project->id ] ] ) !!}
-                        {!! Form::hidden( '_method', 'DELETE') !!}
-                        {!! Form::submit( '×' ) !!}
-                    {!! Form::close() !!}
-                </td>
-            </tr>
-            
-        @endforeach
+            <!--PROJECT TABLE-->
+            <table class="space" id="dashboard">
 
-    </table>
+                <!--IF NO PROJECTS-->
+                @if( !count( $projects ) )
 
-    <a class="button"
-       href="/projects/create">Add New Project</a>
+                    <tr>
+                        <td class="space">No projects available.</td>
+                    </tr>
+
+                @else
+
+                    @foreach( $projects as $project )
+
+                        <tr>
+
+                            <!--TITLE-->
+                            <td class="dashboard-title"><a href="/projects/{{ $project->id }}">{{ $project->title }}</a></td>
+
+                            <!--EDIT-->
+                            <td class="dashboard-edit">
+                                <a href="/projects/{{ $project->id }}/edit">Edit</a>
+                            </td>
+
+                            <!--DELETE-->
+                            <td class="dashboard-delete">
+
+                                {!! Form::open( [ 'action' => [ 'ProjectsController@destroy', $project->id ] ] ) !!}
+                                    {!! Form::hidden( '_method', 'DELETE') !!}
+                                    {!! Form::submit( '×' ) !!}
+                                {!! Form::close() !!}
+
+                            </td>
+
+                        </tr>
+                        
+                    @endforeach
+
+                @endif
+
+            </table>
+
+            <div class="space">
+                <a class="button"
+                href="/projects/create">Add New Project</a>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
 
 @endsection

@@ -10,8 +10,6 @@
             <div class="container">
 
                 <h1 class="space">The<br>Artwork of<br>Jordan Alamilla</h1>
-                
-<!--                    <img class="full" src="images/DSC_0253-2.jpg">-->
 
                 <p class="space grey-text">Hi, I’m Jordan. I’m a web developer living and working in the Greater Toronto Area (GTA) of Ontario, Canada. When I’m not working on websites, I like to draw. On this website, you can view my work and also order prints. All prints from this site are signed by me with my gold Sharpie. Fancy, I know. You can also send me a message and we can discuss purchasing my original drawings. Heads up, they are a lot more expensive than prints and at the present time, I only deliver originals to residents of the GTA. Thanks for the visit and enjoy.</p>
 
@@ -29,7 +27,7 @@
             <div class="container">
 
                 @if( !count( $projects ) )
-                    <p>No projects available.</p>
+                    <p class="space">No projects available.</p>
 
                 @else
 

@@ -30,13 +30,25 @@
 
                 <!--LOGGED IN LINKS-->
                 @else
+
+                    @if( Auth::user()->type == 'user' )
+                        <a href="/orders">Orders</a>
+
+                    @else
+                        <a href="/dash">Dash</a>
+
+                    @endif
+
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>
 
-                    <form action="{{ route('logout') }}" method="POST" style="display: none;">
+                    <form id="logout-form"
+                          action="{{ route('logout') }}"
+                          method="POST"
+                          style="display: none;">
                         @csrf
                     </form>
 

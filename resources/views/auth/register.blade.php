@@ -10,6 +10,10 @@
         <form class="padding" method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
             @csrf
 
+            <div class="space">
+                <h1>Register</h1>
+            </div>
+
             <!-- NAME -->
             <div class="form-group padding">
 
@@ -125,7 +129,7 @@
             <!-- CITY -->
             <div class="form-group padding">
 
-                <label class="space lowercase" for="city">{{ __('city') }}</label>
+                <label class="space lowercase" for="city">{{ __('City') }}</label>
 
                 <div>
                     <input id="city"
@@ -146,6 +150,30 @@
 
             </div>
 
+            <!-- PROVINCE -->
+            <div class="form-group padding">
+
+                <label class="space lowercase" for="province">{{ __('Province') }}</label>
+
+                <div>
+                    <input id="province"
+                        type="text"
+                        class="full space form-control{{ $errors->has('province') ? ' is-invalid' : '' }}"
+                        name="province"
+                        placeholder="Ontario"
+                        value="{{ old('province') }}"
+                        required>
+
+                    @if ($errors->has('province'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('province') }}</strong>
+                        </span>
+                    @endif
+
+                </div>
+
+            </div>
+
             <!-- POSTAL CODE -->
             <div class="form-group padding">
 
@@ -156,7 +184,7 @@
                         type="text"
                         class="full space form-control{{ $errors->has('postal_code') ? ' is-invalid' : '' }}"
                         name="postal_code"
-                        placeholder="A1B 2C3"
+                        placeholder="A1B2C3"
                         value="{{ old('postal_code') }}"
                         required>
 
