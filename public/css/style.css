@@ -17,10 +17,12 @@ body {
     min-height: calc(100vh - 100px);
 }
 
-h1 {
+h1, h2 {
     font-weight: bold;
-    font-size: 36px;
 }
+
+h1 { font-size: 36px; }
+h2 { font-size: 24px; }
 
 /* ========== NAV ========== */
 
@@ -118,6 +120,7 @@ main {
 }
 
 input[type=text],
+input[type=number],
 input[type=email],
 input[type=password] {
     background: none;
@@ -128,6 +131,12 @@ input[type=password] {
 form button {
     display: block;
     clear: both;
+}
+
+/* ========== CREATE FORM ========== */
+
+.form-create-product {
+    outline: 1px solid #CCC;
 }
 
 /* ========== MOBILE ========== */
