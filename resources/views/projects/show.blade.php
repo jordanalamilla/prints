@@ -29,7 +29,7 @@
                     <p class="grey-text" id="print-artist">By Jordan Alamilla</p>
                     
                     <!--EXTRA CREDS-->
-                    <p class="grey-text" id="print-creds">Photography by Sarah Rose</p>
+                    <p class="grey-text" id="print-creds">{{ ucfirst( $project->credits ) }}</p>
                     
                     <!--DESCRIPTION-->
                     <div class="grey-text" id="print-description">{!! $project->description !!}</div>
@@ -43,9 +43,9 @@
                     <!--INFO-->
                     <ul id="print-info">
                     
-                        <li>Print of a charcoal drawing</li>
-                        <li>11 &times; 15 inches</li>
-                        <li>$50.00</li>
+                        <li>Print of a {{ $project->type }}</li>
+                        <li>{{ $project->art_print->size }}</li>
+                        <li>${{ money_format( '%i', $project->art_print->price ) }}</li>
                     
                     </ul>
                     

@@ -38,6 +38,7 @@
         <div id="app">
             
             @include( 'includes/nav' )
+            @include( 'includes/messages' )
             @yield('content')
 
         </div>
