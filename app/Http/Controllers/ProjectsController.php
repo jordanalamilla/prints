@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Project;
+use App\ArtPrint;
+use App\Original;
 
 class ProjectsController extends Controller
 {
@@ -37,17 +39,19 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
+        // VALIDATION
         $validatedData = $request->validate([
             'title'                 => 'required',
             'description'           => 'required',
-            'media'                 => 'required',
+            'credits'               => 'required',
+            'type'                  => 'required',
             'date'                  => 'required',
             'prints_available'      => 'required',
             'print_size'            => 'required',
             'print_price'           => 'required',
             'original_available'    => 'required',
-            'original_size'         => 'nullable',
-            'original_price'        => 'nullable',
+            'original_size'         => 'required',
+            'original_price'        => 'required',
             'thumb_image'           => 'image|required|max:1999',
             'full_image'            => 'image|required|max:1999'
         ]);
@@ -56,7 +60,7 @@ class ProjectsController extends Controller
         $thumb_image        = $request->file( 'thumb_image' );
         $full_image         = $request->file( 'full_image' );
 
-        //GENERATE UNIQUE FILE NAME
+        // GENERATE UNIQUE FILE NAME
         $originalFileName   = $thumb_image->getClientOriginalName();
         $parts              = explode( '.', $originalFileName );
         $name               = $parts[ 0 ];
@@ -64,32 +68,42 @@ class ProjectsController extends Controller
         $time               = time();
         $finalFileName      = "$name-$time.$ext";
 
-        //UPLOAD IMAGES TO STORAGE
-        $thumb_image->storeAs( 'public/img/projects/thumb', $finalFileName );     // UPLOAD THUMB
-        $full_image->storeAs( 'public/img/projects/full', $finalFileName );     // UPLOAD FULL
+        // UPLOAD IMAGES TO STORAGE
+        $thumb_image->storeAs( 'public/img/projects/thumb', $finalFileName );
+        $full_image->storeAs( 'public/img/projects/full', $finalFileName );
         //$ php artisan storage:link
 
-
-
-
-
+        // CREATE PROJECT
         $project = new Project();
 
         $project->title                 = $request->input( 'title' );
         $project->description           = $request->input( 'description' );
-        $project->media                 = $request->input( 'media' );
-        $project->creation_date         = $request->input( 'date' );
+        $project->credits               = $request->input( 'credits' );
+        $project->type                  = $request->input( 'type' );
         $project->image                 = $finalFileName;
-        $project->prints_available      = $request->input( 'prints_available' );
-        $project->print_size            = $request->input( 'print_size' );
-        $project->print_price           = $request->input( 'print_price' );
-        $project->original_available    = $request->input( 'original_available' );
-        $project->original_size         = $request->input( 'original_size' );
-        $project->original_price        = $request->input( 'original_price' );
-
+        $project->creation_date         = $request->input( 'date' );
+        
         $project->save();
 
-        return redirect( 'dashboard' )->with( 'success', $project->title . ' successfully created.' );
+        // CREATE PRINT
+        $art_print = new ArtPrint();
+
+        $art_print->available           = $request->input( 'prints_available' );
+        $art_print->size                = $request->input( 'print_size' );
+        $art_print->price               = $request->input( 'print_price' );
+
+        $project->art_print()->save( $art_print );
+
+        // CREATE ORIGINAL
+        $original = new Original();
+
+        $original->available             = $request->input( 'original_available' );
+        $original->size                  = $request->input( 'original_size' );
+        $original->price                 = $request->input( 'original_price' );
+
+        $project->original()->save( $original );
+
+        return redirect( 'dash' )->with( 'success', $project->title . ' successfully created.' );
     }
 
     /**
@@ -101,10 +115,6 @@ class ProjectsController extends Controller
     public function show( Request $request, $id )
     {
         $project = Project::find( $id );
-
-        // if( $project->original_available == 'yes' ) {
-        //     $request->session()->flash( 'success', 'This original drawing is available for purchase. Check <a href="/about">ABOUT</a> for more info.' );
-        // }
 
         return view( 'projects/show' )->with( 'project', $project );
     }

@@ -44,14 +44,14 @@
                 <!-- DESCRIPTION -->
                 <div class="form-group padding">
     
-                    <label class="space lowercase" for="title">Description</label>
+                    <label class="space lowercase" for="description">Description</label>
     
                     <div>
 
                         <textarea id="article-ckeditor"
                             class="full space"
-                            name="title"
-                            value="{{ old('title') }}"
+                            name="description"
+                            value="{{ old('description') }}"
                             required></textarea>
     
                     </div>
@@ -89,6 +89,25 @@
                             name="type"
                             placeholder="Charcoal drawing"
                             value="{{ old('type') }}"
+                            required>
+    
+                    </div>
+    
+                </div>
+
+                <!-- DATE -->
+                <div class="form-group padding">
+    
+                    <label class="space lowercase" for="date">Date</label>
+    
+                    <div>
+
+                        <input id="date"
+                            type="text"
+                            class="full space"
+                            name="date"
+                            placeholder="September 2018"
+                            value="{{ old('date') }}"
                             required>
     
                     </div>
@@ -147,9 +166,9 @@
                                 <input id="prints-available"
                                     type="number"
                                     class="full space"
-                                    name="prints-available"
+                                    name="prints_available"
                                     placeholder="10"
-                                    value="{{ old('prints-available') }}"
+                                    value="{{ old('prints_available') }}"
                                     required>
             
                             </div>
@@ -166,9 +185,9 @@
                                 <input id="print-size"
                                     type="text"
                                     class="full space"
-                                    name="print-size"
+                                    name="print_size"
                                     placeholder="11 x 15 Inches"
-                                    value="{{ old('print-size') }}"
+                                    value="{{ old('print_size') }}"
                                     required>
             
                             </div>
@@ -185,9 +204,9 @@
                                 <input id="print-price"
                                     type="text"
                                     class="full space"
-                                    name="print-price"
+                                    name="print_price"
                                     placeholder="$50.00"
-                                    value="{{ old('print-price') }}"
+                                    value="{{ old('print_price') }}"
                                     required>
             
                             </div>
@@ -216,9 +235,9 @@
                                 <input id="original-available"
                                     type="number"
                                     class="full space"
-                                    name="original-available"
+                                    name="original_available"
                                     placeholder="1"
-                                    value="{{ old('original-available') }}"
+                                    value="{{ old('original_available') }}"
                                     required>
             
                             </div>
@@ -235,9 +254,9 @@
                                 <input id="original-size"
                                     type="text"
                                     class="full space"
-                                    name="original-size"
+                                    name="original_size"
                                     placeholder="18 x 24 Inches"
-                                    value="{{ old('original-size') }}"
+                                    value="{{ old('original_size') }}"
                                     required>
             
                             </div>
@@ -254,9 +273,9 @@
                                 <input id="original-price"
                                     type="text"
                                     class="full space"
-                                    name="original-price"
+                                    name="original_price"
                                     placeholder="$800.00"
-                                    value="{{ old('original-price') }}"
+                                    value="{{ old('original_price') }}"
                                     required>
             
                             </div>

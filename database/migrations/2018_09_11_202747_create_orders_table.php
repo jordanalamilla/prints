@@ -21,8 +21,8 @@ class CreateOrdersTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
 
             # FORIEGN KEY TO PRINT
-            $table->unsignedInteger('print_id');
-            $table->foreign('print_id')->references('id')->on('prints');
+            $table->unsignedInteger('art_print_id');
+            $table->foreign('art_print_id')->references('id')->on('art_prints');
 
             $table->integer( 'amount' );
             $table->float( 'total', 5, 2 );
