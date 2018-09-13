@@ -57,7 +57,7 @@
             </table>
 
             <div class="space">
-                <a class="button"
+                <a class="red button"
                 href="/projects/create">Add New Project</a>
             </div>
 

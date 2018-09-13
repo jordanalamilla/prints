@@ -50,7 +50,11 @@
                     </ul>
                     
                     <!--ADD TO CART-->
-                    <a class="button" href="#">add to cart</a>
+                    {{-- <a class="green button" href="#">get print</a> --}}
+
+                    <!--PAYPAL BUTTON-->
+                    <div id="paypal-button-container"></div>
+                    <script src="{{ asset('js/paypal.js') }}"></script>
                 
                 </div>
             

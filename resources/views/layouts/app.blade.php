@@ -20,6 +20,9 @@
         <!-- CKEDITOR -->
         <script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script>
     
+        <!-- PAYPAL -->
+        <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    
         <!-- FONTAWESOME STYLE -->
         <link rel="stylesheet"
               href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"

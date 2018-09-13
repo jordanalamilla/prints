@@ -81,6 +81,18 @@ WHITE : #F0F0F0
     border-bottom: 1px solid #F0F0F0;
 }
 
+.green {
+    border: 1px solid #798d79 !important;
+    color: #425342 !important;
+    background-color: #b7c0a2 !important;
+}
+
+.red {
+    border: 1px solid #798d79 !important;
+    color: #425342 !important;
+    background-color: #b7c0a2 !important;
+}
+
 .grey-text{
     color: #808080;
 }
@@ -97,13 +109,10 @@ WHITE : #F0F0F0
 }
 
 button, .button {
-    color: #F8F6F3 !important;
-    background-color: #A96060;
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 15px;
     text-transform: lowercase;
     text-decoration: none !important;
-    border-bottom: none !important;
     font-size: 16px;
 }
 
